@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>ExpenceTracker</title>
+    <style>
+        body {background-color: rgba(50, 69, 155, 0.568);}
+        h1 ,p  {color: #fad400;}
+        .buttons {color:rgb(233, 34, 7);}   
+        header {text-align:center} 
+        table, tr {margin-top:20px; border: 1px solid black}    
+    </style>
+    </head>
+    <body>
+        <header class="header">
+        <h1>Track your expences</h1>
+        <p>Add new item:</p>
+        </header>
+        <div>
+            <p>Name:</p>
+            <input type="text"  id="name" name="nameOfShop"  placeholder="where was the expence made?">
+            <p>Date:</p>
+            <input type="date"  id="date" name="date" placeholder="when was the expence made?">
+            <p>Amount:</p>
+            <input type="number"  id="amount" name="amount" placeholder="amount spent?">
+            <div>
+            <button type="button" id="submit" name="submit">Submit</button>
+            <button type="button" id="clear" name="clear">Clear</button>
+            </div>
+        </div>
+        <div>
+            <table class="spent">
+                <tbody>
+                    <tr id="tabName">Name</tr>
+                    <tr id="tabDate">Date</tr>
+                    <tr id="tabAmount">Amounts</tr>
+                </tbody>
+            </table>
+        </div>   
+    </body>
+<script>
+    //const of the form element
+    const nameOfShop = document.querySelector('#name');
+    const date = document.querySelector('#date');
+    const amount = document.querySelector('#amount');
+    //cosnt for table 
+    const tabName = document.querySelector('#tabName');
+    const tabAmount = document.querySelector('#tabAmount');
+    const tabDate = document.querySelector('#tabDate');
+    const spent = document.querySelector('.spent');
+    //const for submit button and relative function 
+    const sub = document.querySelector('#submit');
+    sub.addEventListener('click', update);
+
+    function update(){
+        if(nameOfShop.value != '' && amount.value != '' && date.value != ''){
+            let updateName = document.createElement('td');
+            updateName.innerHTML = nameOfShop.value;
+            tabName.appendChild(updateName);
+            let updateDate = document.createElement('td');
+            updateDate.innerHTML = date.value;
+            tabDate.appendChild(updateDate);
+            let updateAmount = document.createElement('td');
+            updateAmount.innerHTML = amount.value;
+            tabAmount.appendChild(updateAmount);
+            let x = document.createElement('button');
+            x.innerHTML = "x";
+            spent.appendChild(x);
+        }else{
+            alert("please fill all fields")
+        }
+    }
+
+
+    //clear button with functions
+    const clear = document.querySelector('#clear');
+    clear.addEventListener('click', () => {
+        nameOfShop.value = '';
+        date.value='';
+        amount.value = '';
+    })
+</script>
+</html>
