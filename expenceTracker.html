@@ -31,9 +31,12 @@
         <div>
             <table class="spent">
                 <tbody>
-                    <tr id="tabName">Name</tr>
-                    <tr id="tabDate">Date</tr>
-                    <tr id="tabAmount">Amounts</tr>
+                    <tr>
+                    <td id="tabName">Name</td>
+                    <td id="tabDate">Date</td>
+                    <td id="tabAmount">Amounts</td>
+                    <td id="cancell"></td>
+                    </tr>
                 </tbody>
             </table>
         </div>   
@@ -47,30 +50,37 @@
     const tabName = document.querySelector('#tabName');
     const tabAmount = document.querySelector('#tabAmount');
     const tabDate = document.querySelector('#tabDate');
-    const spent = document.querySelector('.spent');
+    const cancell = document.querySelector('#cancell');
     //const for submit button and relative function 
     const sub = document.querySelector('#submit');
     sub.addEventListener('click', update);
 
     function update(){
         if(nameOfShop.value != '' && amount.value != '' && date.value != ''){
-            let updateName = document.createElement('td');
+            let updateName = document.createElement('tr');
             updateName.innerHTML = nameOfShop.value;
             tabName.appendChild(updateName);
-            let updateDate = document.createElement('td');
+            let updateDate = document.createElement('tr');
             updateDate.innerHTML = date.value;
             tabDate.appendChild(updateDate);
-            let updateAmount = document.createElement('td');
+            let updateAmount = document.createElement('tr');
             updateAmount.innerHTML = amount.value;
             tabAmount.appendChild(updateAmount);
+            let tr = document.createElement('tr');
             let x = document.createElement('button');
             x.innerHTML = "x";
-            spent.appendChild(x);
+            cancell.appendChild(tr);
+            tr.appendChild(x);
+                //cancell button 
+            x.addEventListener('click', () =>{ 
+                tabName.removeChild(updateName);
+                tabAmount.removeChild(updateAmount);
+                tabDate.removeChild(updateDate);
+            })
         }else{
             alert("please fill all fields")
         }
     }
-
 
     //clear button with functions
     const clear = document.querySelector('#clear');
