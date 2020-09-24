@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>TO-DO list</title>
+    <style>
+        body {background-color: rgba(50, 69, 155, 0.568);}
+        h1   {color: #fad400;}
+        .buttons {color:rgb(233, 34, 7);}        
+    </style>
+    </head>
+    <body>
+        <h1>TO-DO List</h1>
+        <div>
+            <input type="text"  id="text" name="element"  placeholder="add an element">
+        </div>
+        <div>
+            <button type="button" class="buttons" id="add-to-do" name="addToList">addToList</button>
+            <button type="button" class="buttons" id="clear" name="clear">clear</button>
+        </div>
+        <div>
+            <ul class="list"></ul>
+        </div>   
+    </body>
+<script>
+    //const and function for adding items to list
+    const adding = document.querySelector('#add-to-do');
+    adding.addEventListener('click', update);
+    const text = document.querySelector('#text');
+    const list = document.querySelector('.list');
+    function update(e){
+        let li = document.createElement('li');
+        li.innerHTML = text.value;
+        list.appendChild(li);
+        //add buttons for deleting single item and updating it if done
+        //button x
+        let x = document.createElement('button');
+        x.innerHTML ="x";
+        li.appendChild(x);
+        //button done
+        let done = document.createElement('button');
+        done.innerHTML ="Done";
+        li.appendChild(done);
+         //make x button delete the element
+        x.addEventListener('click', () => {list.removeChild(li)});
+        //button done function
+        done.addEventListener('click', () => {
+            li.style.color = "#fad400"});
+    }
+
+
+    //clear button with functions
+    const clear = document.querySelector('#clear');
+    clear.addEventListener('click', clearText);
+    function clearText(){
+        text.value = '';
+    }
+    
+
+</script>
+</html>

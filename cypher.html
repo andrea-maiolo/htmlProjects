@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+function caesar (string, num){
+let alpha = 'abcdefghijklmnopqrstuvwxyz'.split('');
+result= [];
+  arr = string.split("");
+  for(let i=0; i<arr.length; i++){
+   currentA = alpha.indexOf(arr[i]);
+   if (currentA === undefined){
+     result += arr[i]
+   }
+   newA = currentA +num;
+   c = (newA%26);
+   if(c<0){
+    result += alpha[alpha.length + c];
+   }else if(c>0) {
+   result += (alpha[c]);
+    } 
+  }
+    return result
+}
+
+
+console.log(caesar('a', 1)) ;console.log('B')
+console.log(caesar('aaa', 1)) ;console.log('Bbb')
+console.log(caesar('hello, world!', 5)); console.log('Mjqqt, Btwqi!')
+console.log(caesar('mjqqt, btwqi!', -5));  console.log('Hello, World!')
+console.log(caesar('z', 1)) ;console.log('A')
+console.log(caesar('hello, world!', 75)); console.log('Ebiil, Tloia!')
+console.log(caesar('hello, world!', -29));   console.log('Ebiil, Tloia!')
+</script>
+</html>
