@@ -1,0 +1,13 @@
+body{
+    color:rgb(77, 21, 190)
+}
+.shelf{
+    display: flex;
+    flex:1;
+}
+p{
+    margin: 10px;
+}
+#form{
+    display: none;
+}

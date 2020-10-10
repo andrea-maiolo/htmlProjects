@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="style.css">
         <meta charset="UTF-8">
     </head>
     <body>
-        <p>this is a test</p>
+        <div>
+            <button type="button" id="addNewBook">New Book</button>
+            <form id="form">
+                <input type="text" id="title" placeholder="title">
+                <input type="text" id="author" placeholder="author">
+                <input type="number" id="pages" >
+                <input type="radio" id="read">
+                    <label for="read">Read</label>
+                    <input type="radio" id="reading">
+                    <label for="reading">Reading</label>
+                    <input type="radio" id="to read">
+                    <label for="to read">To read</label>
+            </form>
+        </div>
+        <div class="shelf">
+            <p>this is test1 book</p>
+            <p>this is test2 book</p>
+            <p>this is test3 book</p>
+        </div>
     </body>
 <script src="main.js"></script>
 </html>
