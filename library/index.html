@@ -5,28 +5,22 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        <div>
-            <button type="button" id="addNewBook">New Book</button>
+        <h1>My Library!</h1>
+        <button type="button" id="addNewBook">New Book</button>
             <form id="formAddingBook">
                 <input type="text" id="title" placeholder="title">
                 <input type="text" id="author" placeholder="author">
                 <input type="number" id="pages" >
                 <br>
             <form id="radioButtons">
-                <input type="radio" id="statusRead" name="status" value="read">
+                <input type="radio" id="statusRead" name="status">
                 <label for="statusRead">Read</label><br>
-                <input type="radio" id="statusReading" name="status" value="reading">
-                <label for="statusReading">Reading</label><br>
-                <input type="radio" id="statusToRead" name="status" value="toRead">
+                <input type="radio" id="statusToRead" name="status">
                 <label for="statusToRead">To read</label>
                 </form>
                 <button type="button" id="adding">Add</button>
               </form>
-        </div>
-        <div class="shelf">
-            <p>this is test1 book</p>
-            <p>this is test2 book</p>
-            <p>this is test3 book</p>
+        <div id="display">
         </div>
     </body>
 <script src="main.js"></script>
