@@ -7,17 +7,21 @@
     <body>
         <div>
             <button type="button" id="addNewBook">New Book</button>
-            <form id="form">
+            <form id="formAddingBook">
                 <input type="text" id="title" placeholder="title">
                 <input type="text" id="author" placeholder="author">
                 <input type="number" id="pages" >
-                <input type="radio" id="read">
-                    <label for="read">Read</label>
-                    <input type="radio" id="reading">
-                    <label for="reading">Reading</label>
-                    <input type="radio" id="to read">
-                    <label for="to read">To read</label>
-            </form>
+                <br>
+            <form id="radioButtons">
+                <input type="radio" id="statusRead" name="status" value="read">
+                <label for="statusRead">Read</label><br>
+                <input type="radio" id="statusReading" name="status" value="reading">
+                <label for="statusReading">Reading</label><br>
+                <input type="radio" id="statusToRead" name="status" value="toRead">
+                <label for="statusToRead">To read</label>
+                </form>
+                <button type="button" id="adding">Add</button>
+              </form>
         </div>
         <div class="shelf">
             <p>this is test1 book</p>

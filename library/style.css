@@ -8,6 +8,9 @@ body{
 p{
     margin: 10px;
 }
-#form{
+#formAddingBook{
     display: none;
+} 
+#adding{
+    display:none
 }

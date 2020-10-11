@@ -8,6 +8,21 @@ function addBooks(title,author,pages,read){
 }
 
 //display the library
+const add = document.getElementById('+');
+// add.addEventListener('click', formCheck);
+const title = document.getElementById('title');
+const author = document.getElementById('author');
+const pages = document.getElementById('pages');
+//radio buttons
+const read = document.getElementById('read'); 
+const reading = document.getElementById('reading');
+const toRead = document.getElementById('to read');
+read.addEventListener('click', () => {console.log("hello")})
+// function formCheck(){
+//     // if((title.value != '' && author.value != '' && pages.value != '') && (read.value != ''|| reading.value!='' || toRead.value != '')){
+//         console.log("hello")
+//     }
+// }
 const display = document.querySelector('.shelf');
 const page = document.createElement('p');
 var b = document.createElement('p');
@@ -20,10 +35,9 @@ function showMe(library) {
 }
 // Add a “NEW BOOK” button that brings up a form allowing users to input the details for the 
 // new book: author, title, number of pages, whether it’s been read and anything else you might want.
-
 const buttonNewBook =document.querySelector('#addNewBook');
 const form = document.querySelector('#form');
-buttonNewBook.addEventListener('click', () => form.style.display('inline-block') )
+buttonNewBook.addEventListener('click', () => formAddingBook.style.display="block");
 
 //this is the construct for the books
 function Book(title, author, pages, read){

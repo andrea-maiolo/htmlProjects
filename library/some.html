@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+        <button type="button" id="addNewBook">New Book</button>
+            <form id="formAddingBook">
+                <input type="text" id="title" placeholder="title">
+                <input type="text" id="author" placeholder="author">
+                <input type="number" id="pages" >
+                <br>
+            <form id="radioButtons">
+                <input type="radio" id="statusRead" name="status" value="read">
+                <label for="statusRead">Read</label><br>
+                <input type="radio" id="statusReading" name="status" value="reading">
+                <label for="statusReading">Reading</label><br>
+                <input type="radio" id="statusToRead" name="status" value="toRead">
+                <label for="statusToRead">To read</label>
+                </form>
+                <button type="button" id="adding">Add</button>
+              </form>
+
+
+</html>
+<script>
+const title = document.querySelector('#title');
+const author = document.querySelector('#author');
+const pages = document.querySelector('#pages');
+//radio buttons
+const statusRead = document.querySelector('#statusRead');
+const statusReading = document.querySelector('#statusReading');
+const statusToRead = document.querySelector('#statusToRead');
+//this hide the form
+const formAddingBook = document.querySelector('#formAddingBook');
+//this button will actually add the books on the shelf
+const adding = document.querySelector('#adding');
+adding.addEventListener('click',addingToLibrary);
+function addingToLibrary(){
+    if((title.value!= '' && author.value!= ''&& pages.value!= '') &&(statusRead.checked ||statusReading.checked || statusToRead.checked)){
+    
+    }}
+
+//this is to chow the form for adding a book
+const addNewBook = document.querySelector('#addNewBook');
+addNewBook.addEventListener('click', ()=>{formAddingBook.style.display ="block"; adding.style.display = "block"})
+</script>
