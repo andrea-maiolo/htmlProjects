@@ -34,7 +34,7 @@ function addingToLibrary(){
 //show me the library
 function showMe(element){
     let myBook =document.createElement('div');
-    myBook.classList.add("books")
+    myBook.classList.add("books");
     let myBookTitle =document.createElement('p');
     myBookTitle.innerHTML = element.title;
     let myBookAuthor =document.createElement('p');
@@ -43,22 +43,22 @@ function showMe(element){
     myBookPages.innerHTML = element.pages;
     let myBookStatus = document.createElement('p');
     myBookStatus.innerHTML = element.info();
+    let removeButton = document.createElement('button');
+    removeButton.innerHTML="x";
+    removeButton.addEventListener('click', removeBook);
     myBook.appendChild(myBookTitle);
     myBook.appendChild(myBookAuthor);
     myBook.appendChild(myBookPages);
     myBook.appendChild(myBookStatus);
-    // myBook.appendChild(myBookStatus);
+    myBook.appendChild(removeButton)
     display.appendChild(myBook);    
-
-    
-    // let myBook = document.createElement('p');
-    // myBook.innerHTML = element.info();
-    // display.appendChild(myBook)
 }
 
-// //this function remove the books from library
-//     btns = document.querySelector('.removeBtn')
-//     btns.forEach(btn => btn.addEventListener('click', () => {console.log("hello")}))
+//create a button that can remove the books from library
+function removeBook(e){
+    console.log(e.classList)
+    //display.removeChild(myBook);
+}
 
 //this is the construct for the books, all our books need to becreated from here
 function Book(title, author, pages, read){
