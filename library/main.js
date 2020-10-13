@@ -41,24 +41,23 @@ function showMe(element){
     myBookAuthor.innerHTML = element.author;
     let myBookPages =document.createElement('p');
     myBookPages.innerHTML = element.pages;
-    let myBookStatus = document.createElement('p');
-    myBookStatus.innerHTML = element.info();
+    let myBookInfo = document.createElement('p');
+    myBookInfo.innerHTML = element.info();
     let removeButton = document.createElement('button');
     removeButton.innerHTML="x";
     removeButton.addEventListener('click', removeBook);
     myBook.appendChild(myBookTitle);
     myBook.appendChild(myBookAuthor);
     myBook.appendChild(myBookPages);
-    myBook.appendChild(myBookStatus);
+    myBook.appendChild(myBookInfo);
     myBook.appendChild(removeButton)
     display.appendChild(myBook);    
 }
 
 //create a button that can remove the books from library
-function removeBook(e){
-    console.log(e.classList)
-    //display.removeChild(myBook);
-}
+// function removeBook(){
+   
+// }
 
 //this is the construct for the books, all our books need to becreated from here
 function Book(title, author, pages, read){
