@@ -41,23 +41,47 @@ function showMe(element){
     myBookAuthor.innerHTML = element.author;
     let myBookPages =document.createElement('p');
     myBookPages.innerHTML = element.pages;
-    let myBookInfo = document.createElement('p');
-    myBookInfo.innerHTML = element.info();
+    let myBookInfo = document.createElement('button');
+    myBookInfo.addEventListener('click',()=> {alert(element.info())})
+    myBookInfo.innerHTML = "Info";
+    let myBookStatus = document.createElement('button');
+    myBookStatus.innerHTML= element.read;
+     //this show the formwill set the button status color
+     if(myBookStatus.innerHTML == "true"){
+        myBookStatus.style.background= "green";
+    }else{
+        myBookStatus.style.background= "red";
+    };
+    myBookStatus.addEventListener("click", color);
+    //create a button that can remove the books from library
     let removeButton = document.createElement('button');
     removeButton.innerHTML="x";
-    removeButton.addEventListener('click', removeBook);
+    removeButton.classList.add("remB")
+    removeButton.addEventListener('click', () => {display.removeChild(myBook); cleanLibrary(myBook)});
+    myBook.appendChild(removeButton)
     myBook.appendChild(myBookTitle);
     myBook.appendChild(myBookAuthor);
     myBook.appendChild(myBookPages);
+    myBook.appendChild(myBookStatus)
     myBook.appendChild(myBookInfo);
-    myBook.appendChild(removeButton)
-    display.appendChild(myBook);    
+    display.appendChild(myBook); 
 }
 
-//create a button that can remove the books from library
-// function removeBook(){
-   
-// }
+//this is to remove the  book from the library array
+  function cleanLibrary(ele){
+    let index = library.indexOf(ele);
+      library.splice(index, 1);
+}
+
+ //this show the formwill set the button status color
+ function color(e){
+     console.log(e.innerHTML)
+    // if(myBookStatus.innerHTML == "true"){
+    //     myBookStatus.style.background= "green";
+    // }else{
+    //     myBookStatus.style.background= "red";
+    // }
+}
 
 //this is the construct for the books, all our books need to becreated from here
 function Book(title, author, pages, read){

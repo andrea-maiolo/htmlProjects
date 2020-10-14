@@ -12,9 +12,9 @@ h1{
 p{
     margin: 10px;
 }
-#formAddingBook{
+/* #formAddingBook{
     display: none;
-} 
+}  */
 #adding{
     display:none
 }
@@ -24,4 +24,7 @@ p{
 .books{
     border: 1px solid red;
     flex: 1
+}
+.remB{
+    scroll-margin-right: 10px;
 }
