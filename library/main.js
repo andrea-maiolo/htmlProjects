@@ -75,12 +75,13 @@ function showMe(element){
 
  //this show the formwill set the button status color
  function color(e){
-     console.log(e.innerHTML)
-    // if(myBookStatus.innerHTML == "true"){
-    //     myBookStatus.style.background= "green";
-    // }else{
-    //     myBookStatus.style.background= "red";
-    // }
+    if(this.innerHTML == "true"){
+        this.style.background= "red";
+        this.innerHTML = "false";
+    }else{
+        this.style.background= "green";
+        this.innerHTML  = "true";
+    }
 }
 
 //this is the construct for the books, all our books need to becreated from here
