@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <input type="text" id="sentence" placeholder="type your sentence here">
+    <button id="start">Count vowels</button>
+</body>
+<script>
+    const body = document.querySelector('body');
+    const start = document.querySelector('#start');
+    let sentence = document.querySelector('#sentence');
+    start.addEventListener('click', counting);
+    
+    function counting(){
+        let c = sentence.value;
+        let r =0;
+        for(let i=0;i<c.length;i++){
+            if(c[i] == "a" || c[i] == "e" || c[i] == "i" || c[i] == "o" || c[i] == "u"){
+                r++
+            }
+        }
+        return display(r)
+    }
+
+    function display(value){
+        let display = document.createElement('p');
+        display.innerHTML = `The vowels in your sentence are ${value}`;
+        body.appendChild(display)
+    }
+
+</script>
+</html>
