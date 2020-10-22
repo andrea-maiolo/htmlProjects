@@ -12,9 +12,9 @@ h1{
 p{
     margin: 10px;
 }
-/* #formAddingBook{
+#formAddingBook{
     display: none;
-}  */
+} 
 #adding{
     display:none
 }
