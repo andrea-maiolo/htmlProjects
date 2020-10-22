@@ -1,7 +1,7 @@
 //this is going to be our library
 let library = [];
 
-//variabels form form 
+//variabels form form
 const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const pages = document.querySelector('#pages');
@@ -26,7 +26,7 @@ function addingToLibrary(){
         }else if(statusToRead.checked){
             stat = false;
         }  
-    let newB = new Book(title.value, author.value, pages.value,stat );
+    let newB = new Book(title.value, author.value, pages.value,stat);
     library.push(newB)
     showMe(newB)
     }}
@@ -71,7 +71,8 @@ function showMe(element){
 
 //this is to remove the  book from the library array
 function cleanLibrary(ele){
-    console.log(library[ele])
+    index = library.indexOf(ele)
+    library.splice(index,1)
 }
 
 //this is the function that should toggleRead
