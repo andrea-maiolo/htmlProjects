@@ -46,9 +46,9 @@ function showMe(element){
     myBookInfo.addEventListener('click',()=> {alert(element.info())})
     myBookInfo.innerHTML = "Info";
     let myBookStatus = document.createElement('button');
-    let icon = document.createElement("img");//work on this one to show the img
-    icon.src = "style/002-bookmark-1.svg";
-    myBookStatus.appendChild(icon) 
+    // let icon = document.createElement("img");//work on this one to show the img
+    // icon.src = "style/002-bookmark-1.svg";
+    myBookStatus.innerHTML = ele.read
     if(myBookStatus.innerHTML== "true"){
         myBookStatus.style.background= "green";
     }else{
