@@ -46,15 +46,15 @@ function showMe(element){
     myBookInfo.addEventListener('click',()=> {alert(element.info())})
     myBookInfo.innerHTML = "Info";
     let myBookStatus = document.createElement('button');
-    myBookStatus.innerHTML= element.read;
-    myBookStatus.classList.add("status")
-     //this show the formwill set the button status color
-     if(myBookStatus.innerHTML == "true"){
+    let icon = document.createElement("img");//work on this one to show the img
+    icon.src = "style/002-bookmark-1.svg";
+    myBookStatus.appendChild(icon) 
+    if(myBookStatus.innerHTML== "true"){
         myBookStatus.style.background= "green";
     }else{
         myBookStatus.style.background= "red";
-    };
-    //myBookStatus.addEventListener("click", toggleRead);
+    }
+    myBookStatus.addEventListener("click", ()=>{toggleRead(element,myBookStatus)});
     //create a button that can remove the books from library
     let removeButton = document.createElement('button');
     removeButton.innerHTML="x";
@@ -73,6 +73,22 @@ function showMe(element){
 function cleanLibrary(ele){
     index = library.indexOf(ele)
     library.splice(index,1)
+}
+
+//this show the formwill set the button status color
+function toggleRead(ele, button){
+//this change the status on the library array
+if(ele.read == true){
+    ele.read = false
+}else{
+    ele.read = true
+}
+//this change the colour
+if(ele.read == true){
+    button.style.background= "green";
+}else{
+    button.style.background= "red";
+}
 }
 
 //this is the function that should toggleRead
