@@ -88,21 +88,8 @@ if(ele.read == true){
     button.style.background= "green";
 }else{
     button.style.background= "red";
+  }
 }
-}
-
-//this is the function that should toggleRead
-// function toggleRead() {
-//     console.log(this)
-//     if (this.read) {
-//         this.read = false;
-//     }
-//     else {
-//         this.read = true;
-//     }
-// }
-
-
 
 //this is the construct for the books, all our books need to becreated from here
 function Book(title, author, pages, read){
@@ -120,36 +107,3 @@ function Book(title, author, pages, read){
         return   `${title} by ${author}, ${pages} pages, ${r}`
     }
 }
-
-
-
-
-  
-//   // Changes finished button
-//   function addEventsForFinishedButtons(array){
-//     // Change values on click from finished => unfinished vice versa
-//     array.forEach(button => button.addEventListener("click", e => {
-//       let data = e.target.parentNode.parentNode.getAttribute("data");
-//       //Change value of finished
-//       if (e.target.classList.contains("finished")){
-//         myLibrary[+data - 1].isFinished = "0";
-//         e.target.classList.toggle("finished");
-//         e.target.classList.toggle("unfinished");
-//         e.target.textContent = "Not Finished";
-//       }
-//       else{
-//         myLibrary[+data - 1].isFinished = "1";
-//         e.target.classList.toggle("finished");
-//         e.target.classList.toggle("unfinished");
-//         e.target.textContent = "Finished";
-//       }
-//     }))
-//     //Changes text when hovering asking for a change
-//     array.forEach(button => button.addEventListener("mouseover", e => {
-//       e.target.textContent = "Change status?";
-//     }))
-//     //Goes to the current state when not clicked
-//     array.forEach(button => button.addEventListener("mouseout", e => {
-//       e.target.classList.contains("finished") ? e.target.textContent = "Finished" : e.target.textContent = "Not Finished";
-//     }))
-//   }
