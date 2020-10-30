@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function newStopWatch(){
+        let n
+        let m
+        let duration=0
+        let b = false
+        this.start = function(){
+            if(b){
+                throw new Error("StopWatch already started")
+            }
+            console.log("StopWatch started!");
+            b= true;
+            n = new Date().getSeconds();
+        }
+        this.stop = function(){
+            if(!b){
+                throw new Error("StopWatch is not started!")
+            }
+            console.log("StopWatch stopped!");
+            b= false;
+            m = new Date().getSeconds();
+            duration += m-n
+        }
+        this.reset = function(){
+            b= false;
+            n = null;
+            m=null;
+            duration=0
+        }
+        Object.defineProperty(this, "duration",{
+            get: function() {
+                return duration;
+            }
+        })
+    }
+
+    let sw = new newStopWatch()
+
+</script>
+</html>
