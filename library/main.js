@@ -1,6 +1,3 @@
-//this is going to be our library
-let library = [];
-
 //variabels form form
 const title = document.querySelector('#title');
 const author = document.querySelector('#author');
@@ -19,6 +16,32 @@ addNewBook.addEventListener('click', ()=>{formAddingBook.style.display ="block";
 const adding = document.querySelector('#adding');
 adding.addEventListener('click',addingToLibrary);
 //this function append the books as p elements on the screen
+
+//this is going to be our library
+let library = [];
+
+//this will check at the beginning of the file for a localLibrary
+function isThereALibrary(){
+    let provisionalLib = JSON.parse(localStorage.getItem("localLibrary"));
+    if (provisionalLib.length > 0){
+        library = provisionalLib
+    }else{
+        return
+    }
+}
+isThereALibrary();
+
+//this will display the local Library
+function displayLocalLibrary(){
+    if(library.length > 0){ 
+        for(let i=0;i<library.length;i++){
+            showMe(library[i])
+
+        }
+    }
+}
+displayLocalLibrary()
+
 function addingToLibrary(){
     if((title.value!= '' && author.value!= ''&& pages.value!= '') && (statusRead.checked || statusToRead.checked)){
         if(statusRead.checked){
@@ -29,6 +52,8 @@ function addingToLibrary(){
     let newB = new Book(title.value, author.value, pages.value,stat);
     library.push(newB)
     showMe(newB)
+    movingIntoStorage()
+
     }}
 
 
@@ -48,7 +73,7 @@ function showMe(element){
     let myBookStatus = document.createElement('button');
     // let icon = document.createElement("img");//work on this one to show the img
     // icon.src = "style/002-bookmark-1.svg";
-    myBookStatus.innerHTML = ele.read
+    myBookStatus.innerHTML = element.read
     if(myBookStatus.innerHTML== "true"){
         myBookStatus.style.background= "green";
     }else{
@@ -90,6 +115,13 @@ if(ele.read == true){
     button.style.background= "red";
   }
 }
+
+//this is the function that moves library into localStorage
+function movingIntoStorage(){
+    l = JSON.stringify(library);
+    window.localStorage.setItem("localLibrary", l)
+};
+
 
 //this is the construct for the books, all our books need to becreated from here
 function Book(title, author, pages, read){
