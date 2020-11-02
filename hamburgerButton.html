@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    margin: 0;
+    min-height:100vh;
+}
+button{
+    background-color: rgb(27, 199, 93);
+    border:none;
+    color:white;
+    position: fixed;
+    right:15px;
+    padding:1rem;
+    top: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+button.active{
+    transform:translateX(-100px)
+}
+nav{
+    background-color:rgb(27, 199, 93);;
+    position:fixed;
+    right:0;
+    top:0;
+    height:100vh;
+    transform: translateX(100%);
+}
+nav.active{
+    transform: translateX(0);
+}
+nav ul {
+    padding:0;
+    list-style-type: none;
+    margin: 0
+}
+nav ul li{
+    padding:1rem 0;
+}
+nav a {
+    color : white;
+    text-decoration: none;
+}
+    </style>
+    <title>Hamburger</title>
+</head>
+<body>
+    <button id="btn">☰</button>
+    <nav id="nav">
+        <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Facebook</a></li>
+        </ul>
+    </nav>
+</body>
+<script>
+    const btn =document.getElementById("btn");
+const nav =document.getElementById("nav");
+
+btn.addEventListener('click', ()=>{
+    nav.classList.toggle('active');
+    btn.classList.toggle('active');
+})
+</script>
+</html>

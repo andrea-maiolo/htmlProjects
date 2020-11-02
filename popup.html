@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    margin: 0;
+    min-height:100vh;
+}
+button{
+    margin: 0;
+    border-radius: 10px;
+    padding:1.5rem;
+    background-color: rgb(185, 131, 29);
+    color: black;
+    font-family: inherit;
+}
+
+#btnOpen.active{
+    display: none;
+}
+
+.popupcontainer{
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    display:none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0,0,0,0.5);
+}
+
+.popupcontainer.active{
+    display:flex;
+}
+
+.popup{
+    background-color:#fff;
+    width:500px;
+    padding:1rem;
+    position: relative;
+}
+.popup button{
+    position:absolute;
+    top:10px;
+    right:10px;
+}
+    </style>
+    <title>Popup</title>
+</head>
+<body>
+    <button id="btnOpen">Open</button>
+    <div class="popupcontainer">
+        <h1>Youtube</h1>
+        <p>My podcast is going well!</p>
+        <button id="btnClose">Close</button>
+    </div>
+</body>
+<script>
+    const btnOpen = document.getElementById('btnOpen');
+const btnClose = document.getElementById('btnClose');
+const popup = document.querySelector('.popupcontainer');
+
+
+btnOpen.addEventListener('click', () => {
+    popup.classList.add('active');
+    btnOpen.classList.add('active');
+})
+
+btnClose.addEventListener('click', () => {
+    popup.classList.remove('active');
+    btnOpen.classList.remove('active');
+
+})
+</script>
+</html>

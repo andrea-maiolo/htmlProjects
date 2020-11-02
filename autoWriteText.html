@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    body{
+        display: flex;
+        background-color:blue;
+        color:orange;
+        font-size: 3em;
+        align-items: center;
+        justify-content: center;
+        font-family: sans-serif;
+        margin: 0;
+        min-height:100vh;
+    }
+    </style>
+    <title>Auto Write Text</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const text = "Happy Halloween from the laptop ghost  ";
+
+    let index =0;
+
+    function writeText(){
+    document.body.innerText = text.slice(0,index);
+    index++;
+
+        if(index >text.length-1){
+            index =0;
+        }
+    }
+
+    setInterval(writeText,500)
+</script>
+</html>
